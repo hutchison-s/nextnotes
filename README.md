@@ -1,36 +1,61 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Note Taking App
 
-## Getting Started
+Welcome to NextNotes! This application allows users to create, edit, and view notes, both privately and publicly. Below is a guide to the structure and functionality of the app.
 
-First, run the development server:
+### App Router
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+The NextJS app is structured with the following routes:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+#### Compose
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Path:** `/compose`
+- **Description:** This route allows users to compose a new note. Users can enter the title and content of the note and save it.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+#### Help
 
-## Learn More
+- **Path:** `/help`
+- **Description:** This route provides users with information and guidance on how to use the app. It includes FAQs, tutorials, and contact information for support.
 
-To learn more about Next.js, take a look at the following resources:
+#### Notes
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Path:** `/notes`
+- **Description:** This route displays a list of all notes created by the user. Users can view, edit, and delete their notes.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+##### View Note
 
-## Deploy on Vercel
+- **Path:** `/notes/[id]/`
+- **Description:** This sub-route allows users to view an existing note.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+##### Edit Note
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- **Path:** `/notes/[id]/edit`
+- **Description:** This sub-route allows users to edit an existing note. Users can update the title and content of the note.
+
+#### Public Notes
+
+- **Path:** `/public-notes`
+- **Description:** This route displays a list of public notes created by various users. Notes here are visible to everyone.
+
+##### User's Public Notes
+
+- **Path:** `/public-notes/[user_id]/[note_id]`
+- **Description:** This sub-route displays a searchable list of a specific user's public notes.
+
+##### User's Public Note
+
+- **Path:** `/public-notes/[user_id]/[note_id]`
+- **Description:** This sub-route displays a specific public note created by a specific user. Anyone can view this note, but only the creator can edit it. This is also the link used for sharing a public note.
+
+#### Sign-In
+
+- **Path:** `/sign-in`
+- **Description:** This route allows users to sign in to the app. Users can log in using their credentials to access their private notes and compose new ones.
+
+#### Index
+
+- **Path:** `/`
+- **Description:** This is the main landing page of the app. It provides an overview of the app's features and encourages users to sign in.
+
+### License
+
+This project is licensed under the MIT License.
