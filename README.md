@@ -1,4 +1,4 @@
-# Note Taking App
+# NextNotes App
 
 Welcome to NextNotes! This application allows users to create, edit, and view notes, both privately and publicly. Below is a guide to the structure and functionality of the app.
 
@@ -38,7 +38,7 @@ The NextJS app is structured with the following routes:
 
 ##### User's Public Notes
 
-- **Path:** `/public-notes/[user_id]/[note_id]`
+- **Path:** `/public-notes/[user_id]`
 - **Description:** This sub-route displays a searchable list of a specific user's public notes.
 
 ##### User's Public Note
