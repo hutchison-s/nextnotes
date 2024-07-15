@@ -24,7 +24,8 @@ export async function saveEdit(formData: FormData) {
             .update({
                 title: sanitizeInput(title), 
                 content: sanitizeInput(content), 
-                is_private: is_private
+                is_private: is_private,
+                last_edit: new Date().toISOString()
             })
             .eq('id', parseInt(note_id))
             .select();

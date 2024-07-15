@@ -31,5 +31,5 @@ export default function FullNote({note}: {note: NoteRecord}) {
 
 function decodeContent(text: string) {
     const arr = text.split('&newline&');
-    return arr.map((line, i) => <p key={i} className="m-0">{he.decode(line)}</p>)
+    return arr.map((line, i) => <p key={i} className="m-0 w-full text-wrap">{he.decode(line)}</p>)
 }
