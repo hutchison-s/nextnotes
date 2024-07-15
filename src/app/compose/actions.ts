@@ -16,7 +16,7 @@ export async function saveNote(formData: FormData) {
     const {username, user_id} = await getProfile();
     const is_private = formData.get('isPrivate') === 'on';
     const public_id = randomString(6);
-    const public_url = `http://localhost:3000/public-notes/${username}/${public_id}`
+    const public_url = `https://nextnotes-psi.vercel.app/public-notes/${username}/${public_id}`
     const {error} = await sb
         .from('notes')
         .insert({
