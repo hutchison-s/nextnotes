@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --one: #1d1b22ff;
+  --two: #454141ff;
+  --three: #d5d0d0ff;
+  --four: #f7fbfcff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+html {
+  background-color: var(--one);
+}
+.btn-primary,
+.btn-secondary {
+  display: block;
+  margin: auto;
+  padding: 0.5rem 2rem;
+  border-radius: 0.5rem;
+}
+
+.btn-primary {
+  border: 2px solid var(--three);
+  color: var(--three);
+  background-image: linear-gradient(100deg, transparent 50%, var(--three) 51%);
+  background-size: 250%;
+  background-position: left center;
+  transition: background-position 0.2s ease-in, color 0.1s linear 0.1s;
+}
+.btn-primary:hover,
+.btn-primary:focus-visible {
+  background-position: right center;
+  color: var(--one);
+}
+
+.btn-secondary {
+  border: none;
+  background-color: var(--one);
+  color: var(--three);
+  box-shadow: 2px 2px 12px #f7fbfc22;
+  transition: box-shadow 0.2s ease, background-color 0.2s ease, scale 0.1s;
+}
+
+.btn-secondary:hover,
+.btn-secondary:focus-visible {
+  background-color: var(--one);
+  box-shadow: 2px 2px 15px #f7fbfc55;
+  scale: 1.02;
+}
+
+a:hover {
+  filter: brightness(125%);
+}
+button:hover {
+  cursor: pointer;
+}
+textarea {
+  resize: none;
+}
+
+#loader {
+  animation: spin 0.6s infinite cubic-bezier(.89,.16,.41,1);
+}
+@keyframes spin {
+  from { rotate: 0}
+  to { rotate: 360deg}  
+}
+
+#statusUpdate {
+  animation: rise 0.2s both;
+}
+@keyframes rise {
+  from {translate: -50% 1000%; opacity: 0}
+  to { translate: -50% 500%; opacity: 1}
+}
+
+@layer utilities {
+
+}
